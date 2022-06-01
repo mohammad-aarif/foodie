@@ -1,0 +1,30 @@
+.porduct-label{
+    position: absolute;
+    top:20px;
+    left: 20px;
+}
+.product-view{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-40px, -60px);
+    background: rgba(0, 0, 0, 0.525);
+    opacity: 0;
+    transition: ease-in 0.3s;
+}
+.product:hover .product-view{
+    opacity: 1;
+}
+
+.add-to-cart-button{
+    position: absolute;
+    left: 50%;
+    bottom: -3%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: ease-in 0.3s;
+}
+.product:hover .add-to-cart-button{
+    opacity: 1;
+    bottom: 0%;
+}

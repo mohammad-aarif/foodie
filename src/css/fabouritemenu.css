@@ -1,3 +1,8 @@
+.fabourite-menu{
+    background: url('../assets/images/fabouriteBackground.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .menu-icon{
     width: 100px;
     margin: 0 auto;
@@ -18,22 +23,4 @@
 }
 .menu-icon:hover::before{
     opacity:1;
-}
-
-.porduct-label{
-    position: absolute;
-    top:20px;
-    left: 20px;
-}
-.product-view{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50px, -50px);
-    background: rgba(0, 0, 0, 0.525);
-    opacity: 0;
-    transition: ease-in 0.3s;
-}
-.product:hover .product-view{
-    opacity: 1;
 }

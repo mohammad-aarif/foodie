@@ -9,7 +9,7 @@ import FBurger from './FBurger';
 
 const FabouriteMenu = () => {
     return (
-        <div className='px-32'>
+        <div className=''>
             <div className="text-center">
                 <h1 className="text-3xl font-bold text-red-600">Fabourite Menu</h1>
                 <p className="text-sm">Inspired by recipes and creations of world’s best chefs</p>
@@ -44,7 +44,9 @@ const FabouriteMenu = () => {
             </div>
 
             {/* Fabourite menu items  */}
-            <FBurger />
+            <div className="fabourite-menu px-32 py-20">
+                <FBurger />
+            </div>
         </div>
     );
 };
