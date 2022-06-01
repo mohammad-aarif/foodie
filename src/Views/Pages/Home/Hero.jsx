@@ -55,7 +55,7 @@ const Hero = () => {
                 <h1 className='text-7xl font-bold  hero-title uppercase'>Combo salad <br /> with fries</h1>
                 <p className='py-5 text-2xl font-medium'>Buy 1 Burger and get 1L of Frutica absoultely <span className='font-bold text-red-600'>Free</span></p>
                 <p className='text-xl text-amber-400' style = {{marginTop: '-20px'}}>(Offer Valid for limited time)</p>
-                <button className='bg-white rounded-full border border-2 hover:bg-green-400 hover:text-white border-green-400 mt-3 text-green-400 py-2 px-5 font-semibold text-xs'>From $14.99</button>
+                <button className='bg-white rounded-full border-2 hover:bg-green-400 hover:text-white border-green-400 mt-3 text-green-400 py-2 px-5 font-semibold text-xs'>From $14.99</button>
             </div>
 
             {/* Hero Image Section  */}
