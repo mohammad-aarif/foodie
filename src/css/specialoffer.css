@@ -1,0 +1,53 @@
+.so-burger{
+    background: url('../assets/images/so_burger.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: ease-in-out 0.5s;
+}
+.so-burger:hover{
+    background-position: center;
+}
+
+
+.so-pizza{
+    background: url('../assets/images/so_pizza.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: ease-in-out 0.5s;
+}
+.so-pizza:hover{
+    background-position: center;
+}
+
+
+.so-chicken{
+    background: url('../assets/images/so_chicken.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: ease-in-out 0.5s;
+}
+.so-chicken:hover{
+    background-position: center;
+}
+
+
+.so-mango{
+    background: url('../assets/images/so_mango.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: ease-in-out 0.5s;
+}
+.so-mango:hover{
+    background-position: center;
+}
+
+
+.so-pepsi{
+    background: url('../assets/images/so_pepsi.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: ease-in-out 0.5s;
+}
+.so-pepsi:hover{
+    background-position: center;
+}

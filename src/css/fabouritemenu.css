@@ -1,0 +1,39 @@
+.menu-icon{
+    width: 100px;
+    margin: 0 auto;
+    position: relative;
+}
+.menu-icon::before{
+    content: "";
+    height: 60px;
+    width:60px;
+    top:15px;
+    left: 5px;
+    position:absolute;
+    border-radius: 50%;
+    background: rgb(244, 172, 16);
+    opacity: 0.3;
+    z-index: -1;
+    transition: ease-in 0.3s;
+}
+.menu-icon:hover::before{
+    opacity:1;
+}
+
+.porduct-label{
+    position: absolute;
+    top:20px;
+    left: 20px;
+}
+.product-view{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50px, -50px);
+    background: rgba(0, 0, 0, 0.525);
+    opacity: 0;
+    transition: ease-in 0.3s;
+}
+.product:hover .product-view{
+    opacity: 1;
+}

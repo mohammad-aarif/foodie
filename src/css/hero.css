@@ -1,0 +1,9 @@
+
+.hero-title{
+    transform: rotate(-6deg);
+}
+.glasspepsi{
+    bottom: 60px;
+    right: 350px;
+    z-index: 1;
+}
