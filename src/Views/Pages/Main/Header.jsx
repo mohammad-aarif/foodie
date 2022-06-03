@@ -1,9 +1,13 @@
 import React from 'react';
 import logo from '../../../assets/images/foodie.png'
 import '../../../css/header.css'
+import Drawer from '@mui/material/Drawer';
 import { FaSearch, FaUserAstronaut, FaShoppingBag } from "react-icons/fa";
 import { NavLink, Link } from 'react-router-dom';
+import { useState } from 'react';
+import Cart from '../../Components/Cart';
 const Header = () => {
+    const [cartState, setCartState] = useState(false)
     return (
         <div>
             {/* Navigation For Desctop  */}
@@ -20,6 +24,7 @@ const Header = () => {
                     </form>
                 </div>
 
+                {/* Menu Items  */}
                 <div className="col-span-3">
                     <div className="flex font-medium items-center h-full menu text-xl">
                         <NavLink 
@@ -37,16 +42,25 @@ const Header = () => {
                     </div>
                 </div>
 
+                {/* Buttons  */}
                 <div className="col-span-2">
                     <div className="flex items-center">
                         <Link to='/'><FaUserAstronaut style={{fontSize: '1.6em'}}/></Link>
 
-                        <Link className='p-4 shadow-xl relative mx-2 bg-red-500 rounded-full' to='/'>
+                        <button onClick={() => setCartState(!cartState)} className='p-4 shadow-xl relative mx-2 bg-red-500 rounded-full'>
                             <span style={{top:'-2px', right: '-5px'}} className='text-xs shadow-xl py-1 px-2 rounded-full absolute bg-amber-400 '>2</span>
                             <FaShoppingBag style={{color: 'white', fontSize: '1.4em'}}/>
-                        </Link>
+                        </button>
                     </div>
                 </div>
+
+                {/* Drawer  */}
+                <Drawer
+                    open= {cartState}
+                    onClose={() => setCartState(!cartState)}
+                    anchor= 'right'>
+                        <Cart />
+                </Drawer>
             </div>
         </div>
     );
