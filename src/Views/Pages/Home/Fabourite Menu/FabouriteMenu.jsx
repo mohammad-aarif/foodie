@@ -6,11 +6,12 @@ import pizzaIcon from '../../../../assets/images/pizza_icon.png'
 import organicIcon from '../../../../assets/images/organic_icon.png'
 import chickenIcon from '../../../../assets/images/chicken_icon.png'
 import FBurger from './FBurger';
-import { Link, Route, Routes } from 'react-router-dom';
+import { NavLink, Outlet, Route, Routes } from 'react-router-dom';
 import FPizza from './FPizza';
 import FCombo from './FCombo';
 import FChicken from './FChicken';
 import FOrganic from './FOrganic';
+import useProducts from '../../../../hooks/useProducts';
 
 const FabouriteMenu = () => {
     return (
@@ -22,42 +23,45 @@ const FabouriteMenu = () => {
             {/* Fabourite menu navigation  */}
             <div className="grid grid-cols-5 px-40 py-10 text-center">
 
-                <Link to='fcombo' className="col-span-1 menu-icon">
+                <NavLink 
+                to='fcombo' 
+                className={({isActive}) => isActive ? "menu-active col-span-1 menu-icon" : "col-span-1 menu-icon"}>
                     <img src={comboIcon} alt="" />
                     <div className="font-light text-md uppercase">combo</div>
-                </Link>
+                </NavLink>
                 
-                <Link to='fpizza' className="col-span-1 menu-icon">
+                <NavLink 
+                to='fpizza' 
+                className={({isActive}) => isActive ? "menu-active col-span-1 menu-icon" : "col-span-1 menu-icon"}>
                     <img src={pizzaIcon} alt="" />
                     <div className="font-light text-md uppercase">Pizza</div>
-                </Link>
+                </NavLink>
                 
-                <Link to='fburger' className="col-span-1 menu-icon">
+                <NavLink 
+                to='fburger' 
+                className={({isActive}) => isActive ? "menu-active col-span-1 menu-icon" : "col-span-1 menu-icon"}>
                     <img src={burgerIcon} alt="" />
                     <div className="font-light text-md uppercase">burger</div>
-                </Link>
+                </NavLink>
                 
-                <Link to='fchicken' className="col-span-1 menu-icon">
+                <NavLink 
+                to='fchicken' 
+                className={({isActive}) => isActive ? "menu-active col-span-1 menu-icon" : "col-span-1 menu-icon"}>
                     <img src={chickenIcon} alt="" />
                     <div className="font-light text-md uppercase">chicken</div>
-                </Link>
+                </NavLink>
                 
-                <Link to='forganic' className="col-span-1 menu-icon">
+                <NavLink 
+                to='forganic' 
+                className={({isActive}) => isActive ? "menu-active col-span-1 menu-icon" : "col-span-1 menu-icon"}>
                     <img src={organicIcon} alt="" />
                     <div className="font-light text-md uppercase">Organic</div>
-                </Link>
+                </NavLink>
             </div>
 
             {/* Fabourite menu items  */}
             <div className="fabourite-menu px-32 py-20">
-                <Routes>
-                    <Route path='/' element={<FCombo/>}/>
-                    <Route path='fcombo' element={<FCombo/>}/>
-                    <Route path='fpizza' element={<FPizza/>}/>
-                    <Route path='fburger' element={<FBurger/>}/>
-                    <Route path='fchicken' element={<FChicken/>}/>
-                    <Route path='forganic' element={<FOrganic/>}/>
-                </Routes>
+                <Outlet />
             </div>
         </div>
     );

@@ -21,7 +21,6 @@
     content: "";
     width: 100%;
     height: 2px;
-    background: white;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -36,4 +35,19 @@
     transform: scale3d(1,1,1);
     transform-origin: 50% 50%;
     background: #fbbf24;
+}
+.nav-active{
+    color: #ff0101;
+}
+.nav-active::after{
+    content: "";
+    height: 40px;
+    width:40px;
+    top:-10px;
+    left: 15px;
+    position:absolute;
+    border-radius: 50%;
+    background: rgb(251, 193, 0);
+    opacity: .5;
+    z-index: -1;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../../assets/images/foodie.png'
 import '../../../css/header.css'
 import { FaSearch, FaUserAstronaut, FaShoppingBag } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div>
@@ -22,10 +22,18 @@ const Header = () => {
 
                 <div className="col-span-3">
                     <div className="flex font-medium items-center h-full menu text-xl">
-                        <Link to='/'>Home</Link>
-                        <Link to='/'>Home</Link>
-                        <Link to='/'>Home</Link>
-                        <Link to='/'>Home</Link>
+                        <NavLink 
+                        className={({isActive}) => isActive ? 'nav-active' : null} 
+                        to='/'>Home</NavLink>
+                        <NavLink 
+                        className={({isActive}) => isActive ? 'nav-active' : null} 
+                        to='/shop'>Shop</NavLink>
+                        <NavLink 
+                        className={({isActive}) => isActive ? 'nav-active' : null} 
+                        to='/offers'>Products</NavLink>
+                        <NavLink 
+                        className={({isActive}) => isActive ? 'nav-active' : null} 
+                        to='/product'>Blog</NavLink>
                     </div>
                 </div>
 
