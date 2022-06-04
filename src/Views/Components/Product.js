@@ -7,7 +7,7 @@ import ViewProduct from './ViewProduct';
 
 const Product = ({product}) => {
     const [viewState, setViewState] = useState(false)
-    const {name, price, image} = product
+    const {name, price, image, _id} = product
     return (            
             <div className="text-center product uppercase bg-white relative rounded-lg hover:shadow-md px-10 py-14">
                 <img src={image} alt="" />
@@ -28,7 +28,7 @@ const Product = ({product}) => {
                  open={viewState}
                  onClose ={() => setViewState(!viewState)}
                  >
-                    <ViewProduct id='fjlas09800f4f454v46gv'/>
+                    <ViewProduct id={_id}/>
                 </Modal>
             </div>    
     );

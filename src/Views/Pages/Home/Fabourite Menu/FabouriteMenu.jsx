@@ -5,13 +5,7 @@ import burgerIcon from '../../../../assets/images/burger_icon.png'
 import pizzaIcon from '../../../../assets/images/pizza_icon.png'
 import organicIcon from '../../../../assets/images/organic_icon.png'
 import chickenIcon from '../../../../assets/images/chicken_icon.png'
-import FBurger from './FBurger';
-import { NavLink, Outlet, Route, Routes } from 'react-router-dom';
-import FPizza from './FPizza';
-import FCombo from './FCombo';
-import FChicken from './FChicken';
-import FOrganic from './FOrganic';
-import useProducts from '../../../../hooks/useProducts';
+import { NavLink, Outlet} from 'react-router-dom';
 
 const FabouriteMenu = () => {
     return (

@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useProducts from '../../../../hooks/useProducts';
 import Product from '../../../Components/Product';
-const axios = require('axios');
 
 const FCombo = () => {
-    const [products, setProducts] = useState([{}])
-
-    axios.get('product.json')
-    .then(res => setProducts(res.data))
-    .catch(err => console.log(err))
+    const {productsByCatagory: products} = useProducts('combo')
     return (
         <div className='grid gap-4 grid-cols-3'>
             {
-               products.map(data => <Product product= {data}/>)
+               products.map(data => <Product key={data._id} product= {data}/>)
             }
         </div>
     );

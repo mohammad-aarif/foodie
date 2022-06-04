@@ -1,15 +1,18 @@
+import { useEffect } from "react"
 import { useState } from "react"
 const axios = require('axios').default
 
-const useProducts = () => {
-    const [products, setProducts] = useState([])
+const useProducts = (params) => {
+    const [productsByCatagory, setProductsByCatagory] = useState([])
 
-    axios.get('product.json')
-    .then(res => setProducts(res))
-    .catch(err => console.log(err))
-
+    useEffect(() => {
+        axios.get(`http://localhost:3002/products/${params}`)
+        .then(res => setProductsByCatagory(res.data))
+        .catch(err => console.log(err))
+    }, [params])
+    
     return {
-        products,
+        productsByCatagory,
     }
 }
 export default useProducts
