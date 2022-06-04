@@ -9,7 +9,7 @@ const FPizza = () => {
         <div className='grid gap-4 grid-cols-3'>
             {
                 productLoading
-                ? [...Array(6)].map(data => <ProductSkeleton />)
+                ? [...Array(6)].map((x, index) => <ProductSkeleton key={index}/>)
                 :products.map(data => <Product key={data._id} product= {data}/>)
             }
         </div>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Modal from '@mui/material/Modal';
 import { FaSearch } from 'react-icons/fa';
 import '../../css/product.css'
-import ViewProduct from './ViewProduct';
+import FullProduct from './ViewProduct';
 
 const Product = ({product}) => {
     const [viewState, setViewState] = useState(false)
@@ -28,7 +28,7 @@ const Product = ({product}) => {
                  open={viewState}
                  onClose ={() => setViewState(!viewState)}
                  >
-                    <ViewProduct id={_id}/>
+                    <FullProduct id={_id}/>
                 </Modal>
             </div>    
     );

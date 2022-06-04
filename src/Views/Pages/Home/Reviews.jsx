@@ -22,7 +22,7 @@ const Reviews = () => {
                 className="mySwiper"
             >
                 {
-                    [...Array(4)].map(item => <SwiperSlide className=""><Review /></SwiperSlide>)
+                    [...Array(4)].map((item, index) => <SwiperSlide key={index} className=""><Review /></SwiperSlide>)
                 }
             </Swiper>
         </div>

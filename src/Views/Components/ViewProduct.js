@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ViewProduct = (props) => {
+const ViewProduct = (props, ref) => {
     const {id} = props
     return (
         <div className=' backdrop-blur-md backdrop-brightness-150 w-3/4 product-modal rounded-2xl p-10'>
@@ -8,5 +8,5 @@ const ViewProduct = (props) => {
         </div>
     );
 };
-
-export default ViewProduct;
+const FullProduct = React.forwardRef(ViewProduct)
+export default FullProduct;
