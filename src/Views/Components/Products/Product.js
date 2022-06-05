@@ -2,12 +2,16 @@ import React from 'react';
 import { useState } from 'react';
 import Modal from '@mui/material/Modal';
 import { FaSearch } from 'react-icons/fa';
-import '../../css/product.css'
+import '../../../css/product.css'
 import FullProduct from './ViewProduct';
+import { useDispatch } from 'react-redux';
+import {addToCart} from '../../../redux/reducers/cartSlice'
 
 const Product = ({product}) => {
     const [viewState, setViewState] = useState(false)
     const {name, price, image, _id} = product
+    const dispatch = useDispatch()
+    
     return (            
             <div className="text-center product uppercase bg-white relative rounded-lg hover:shadow-md px-10 py-14">
                 <img src={image} alt="" />
@@ -21,7 +25,9 @@ const Product = ({product}) => {
                 <button onClick={() => setViewState(!viewState)} className='p-5 rounded-full product-view hover:bg-red-600'><FaSearch style={{color: 'white'}} /></button>
 
                 {/* Add to cart button */}
-                <button className="inline-block my-3 text-xs font-bold add-to-cart-button border border-red-600 rounded-full py-3 px-10 hover:bg-red-600">ADD TO CART</button>
+                <button 
+                onClick={() => dispatch(addToCart(product))}
+                className="inline-block my-3 text-xs font-bold add-to-cart-button border border-red-600 py-3 px-10 rounded-full hover:bg-red-600">ADD TO CART</button>
 
                 {/* Product Modal  */}
                 <Modal 

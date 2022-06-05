@@ -1,5 +1,5 @@
 import React from 'react';
-import reviewIcon from '../../assets/images/review_icon.png'
+import reviewIcon from '../../../assets/images/review_icon.png'
 const Review = () => {
     return (
         <div className="px-40">

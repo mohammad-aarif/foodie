@@ -1,7 +1,7 @@
 import React from 'react';
 import useProducts from '../../../../hooks/useProducts';
-import Product from '../../../Components/Product';
-import ProductSkeleton from '../../../Components/ProductSkeleton';
+import Product from '../../../Components/Products/Product';
+import ProductSkeleton from '../../../Components/Products/ProductSkeleton';
 
 const FPizza = () => {
     const {productsByCatagory: products, productLoading} = useProducts('pizza')

@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay, Navigation } from "swiper";
-import Review from '../../Components/Review';
+import Review from '../../Components/Review/Review';
 
 
 const Reviews = () => {

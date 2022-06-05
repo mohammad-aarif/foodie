@@ -5,9 +5,17 @@ import Drawer from '@mui/material/Drawer';
 import { FaSearch, FaUserAstronaut, FaShoppingBag } from "react-icons/fa";
 import { NavLink, Link } from 'react-router-dom';
 import { useState } from 'react';
-import Cart from '../../Components/Cart';
+import Cart from '../../Components/Cart/Cart';
+import { useSelector } from 'react-redux';
 const Header = () => {
     const [cartState, setCartState] = useState(false)
+
+    const itemCount = useSelector(state => state.cart.itemCount)
+
+    const handleOpenCart = () => {
+        setCartState(!cartState)
+    }
+    
     return (
         <div>
             {/* Navigation For Desctop  */}
@@ -47,8 +55,9 @@ const Header = () => {
                     <div className="flex items-center">
                         <Link to='/'><FaUserAstronaut style={{fontSize: '1.6em'}}/></Link>
 
-                        <button onClick={() => setCartState(!cartState)} className='p-4 shadow-xl relative mx-2 bg-red-500 rounded-full'>
-                            <span style={{top:'-2px', right: '-5px'}} className='text-xs shadow-xl py-1 px-2 rounded-full absolute bg-amber-400 '>2</span>
+                        {/* Cart Button  */}
+                        <button onClick={handleOpenCart} className='p-4 shadow-xl relative mx-2 bg-red-500 rounded-full'>
+                            <span style={{top:'-2px', right: '-5px'}} className='text-xs shadow-xl py-1 px-2 rounded-full absolute bg-amber-400 '>{itemCount}</span>
                             <FaShoppingBag style={{color: 'white', fontSize: '1.4em'}}/>
                         </button>
                     </div>
