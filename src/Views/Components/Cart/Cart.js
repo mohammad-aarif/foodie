@@ -4,7 +4,7 @@ import CartItem from './CartItem';
 
 const Cart = () => {
     const cartItems = useSelector(state => state.cart.cart);
-    const totalAmmount = useSelector(state => state.cart.cartTotal);
+    const totalAmmount = useSelector(state => state.cart.totalCartAmmount);
     return (
         <div className='p-10 w-lg'>
             <div className="">

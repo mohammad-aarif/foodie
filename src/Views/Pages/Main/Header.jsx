@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 const Header = () => {
     const [cartState, setCartState] = useState(false)
 
-    const itemCount = useSelector(state => state.cart.itemCount)
+    const itemCount = useSelector(state => state.cart.totalCartItem)
 
     const handleOpenCart = () => {
         setCartState(!cartState)
