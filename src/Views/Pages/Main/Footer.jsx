@@ -29,13 +29,13 @@ const Footer = () => {
                 </div>
             </div>
             <div className="grid grid-cols-4 gap-4 px-32">
-                <div className="">
+                <div >
                     <h1 className="font-bold pb-2 uppercase text-white">Book a table</h1>
                     <p className="text-gray-400">Save time with proper planning</p>
                     <h1 className='text-3xl font-bold text-amber-400'>0092 7894 465</h1>
                 </div>
                 
-                <div className="">
+                <div >
                     <h1 className="font-bold uppercase pb-2 text-white">opening hours</h1>
                     <p className="text-gray-400">Mon – Thu: 10:00 Am – 01:00 Am</p>
                     <p className="text-gray-400">Saturday: 11:00 Am To Midnight</p>
@@ -43,7 +43,7 @@ const Footer = () => {
                     
                 </div>
 
-                <div className="">
+                <div >
                     <h1 className="font-bold pb-2 uppercase text-white">usefull links</h1>
                     <div className="flex flex-col">
                         <Link to='/' className="text-gray-400">Wishlist</Link>
@@ -52,7 +52,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="">
+                <div >
                     <h1 className="font-bold uppercase pb-2 text-white">Address</h1>
                     <p className="text-gray-400">123 New Yourk, 10001</p>
                     <p className="text-gray-400">contact@web.com</p>

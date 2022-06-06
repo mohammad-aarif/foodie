@@ -2,21 +2,24 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { MdOutlineCancel } from "react-icons/md";
 import { addToCart, removeFromCart, subFromCart } from '../../../redux/reducers/cartSlice';
-import { useSelector } from 'react-redux';
+
+
 const CartItem = ({product}) => {
     const{image, name, _id, cartPrice, itemQuantity: count} = product
     const dispatch = useDispatch()
 
+
+    // Add to cart 
     const handleAddBtn = (product) => {
         dispatch(addToCart(product))
-        console.log(product)
     }
 
+    // Substraction from cart 
     const handleSubBtn = (id) => {
         dispatch(subFromCart(id))
-        // console.log(id);
     }
 
+    // Remove form cart 
     const handleRemoveCart = (id, price, itemQuantity) => {
         const data = {
             id,
@@ -24,7 +27,6 @@ const CartItem = ({product}) => {
             itemQuantity
         }
         dispatch(removeFromCart(data))
-        console.log(data);
     }
     return (
         <div className="grid my-1 grid-cols-10 hover:shadow-lg bg-gray-50 rounded-md">
