@@ -1,20 +1,28 @@
 import React from 'react';
 import { BsFacebook, BsGithub, BsGoogle } from "react-icons/bs";
+import { useForm } from "react-hook-form";
 
 const Register = ({loginState}) => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => console.log(data);
+    
+    
     return (
         <div className="mx-auto auth-form w-full">
-            <input type="text" placeholder="Enter Your Name" className='w-full my-2' />
-            <input type="text" placeholder="Enter Your Email" className='w-full my-2' />
-            <input type="text" placeholder="Enter Your Password" className='w-full my-2' />
-            <button className='bg-amber-400 w-full my-2 py-2'>Register</button>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <p className="text-red-600 py-1 text-center">{errors.exampleRequired && 'This field is required'}</p>
+                <input {...register("name", { required: true })} type="text" placeholder="Enter Your Email" className='w-full my-2' />
+                <input {...register("email", { required: true })} type="text" placeholder="Enter Your Email" className='w-full my-2' />
+                <input {...register("password", { required: true })} type="text" placeholder="Enter Your Password" className='w-full my-2' />
+                <p className="font-bold text-gray-600">Forget Password?</p>
+                <button type='submit' className='bg-amber-400 w-full my-2 py-2'>Login</button>
+            </form>
 
-
-            <p className="text-center">Already have a account? <button onClick={() => loginState('login')}>Login</button> </p>
+            <p className="text-center">Alreate have an account? <button onClick={() => loginState('login')}> Login</button> </p>
 
 
             <div className="mx-auto block text-center my-3">
-                <p className="py-2 uppercase">Sing in using</p>
+                <p className="py-2 uppercase">Sing up using</p>
 
                 <button
                 style={{color: 'rgb(40, 40, 40)', fontSize: '1.6em'}} >

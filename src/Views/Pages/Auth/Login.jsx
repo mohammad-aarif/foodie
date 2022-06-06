@@ -1,13 +1,22 @@
 import React from 'react';
 import { BsFacebook, BsGithub, BsGoogle } from "react-icons/bs";
+import { useForm } from "react-hook-form";
+
 const Login = ({loginState}) => {
+    
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => console.log(data);
+    
+    
     return (
         <div className="mx-auto auth-form w-full">
-            <input type="text" placeholder="Enter Your Email" className='w-full my-2' />
-            <input type="text" placeholder="Enter Your Password" className='w-full my-2' />
-            <p className="font-bold text-gray-600">Forget Password?</p>
-            <button className='bg-amber-400 w-full my-2 py-2'>Login</button>
-
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <p className="text-red-600 py-1 text-center">{errors.exampleRequired && 'This field is required'}</p>
+                <input {...register("email", { required: true })} type="text" placeholder="Enter Your Email" className='w-full my-2' />
+                <input {...register("password", { required: true })} type="text" placeholder="Enter Your Password" className='w-full my-2' />
+                <p className="font-bold text-gray-600">Forget Password?</p>
+                <button type='submit' className='bg-amber-400 w-full my-2 py-2'>Login</button>
+            </form>
 
             <p className="text-center">Not a Member? <button onClick={() => loginState('register')}>Register</button> </p>
 
