@@ -1,5 +1,6 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom'
+import Auth from '../Auth/Auth';
 import FBurger from '../Home/Fabourite Menu/FBurger';
 import FChicken from '../Home/Fabourite Menu/FChicken';
 import FCombo from '../Home/Fabourite Menu/FCombo';
@@ -11,7 +12,6 @@ const Main = () => {
     return (
         <main>
             <Routes>
-                <Route path='/home' element={<Home/>} />
                 <Route path='/' element={<Home/>} >
                     <Route path='/' element={<FCombo/>}/>
                     <Route path='fcombo' element={<FCombo/>}/>
@@ -20,6 +20,8 @@ const Main = () => {
                     <Route path='fchicken' element={<FChicken/>}/>
                     <Route path='forganic' element={<FOrganic/>}/>
                 </Route>
+                <Route path='/home' element={<Home/>} />
+                <Route path='/authuser' element={<Auth/>} />
                 <Route path='/product' element={<Products/>} />
             </Routes>
         </main>

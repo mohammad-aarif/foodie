@@ -26,8 +26,8 @@ const Cart = () => {
                     <button
                     onClick={handleClearCart}
                     className='font-medium text-red-600'>
-                    <BsCartXFill style={{display: 'inline-block'}}/>
-                    Clear cart
+                    <BsCartXFill style={{display: 'inline-block', marginRight: '5px'}}/>
+                     Clear cart
                     </button>
                 </div>
 
