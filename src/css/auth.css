@@ -1,5 +1,5 @@
 .auth-form input{
-    border-bottom: 2px solid rgb(40, 40, 40);
+    border-bottom: 2px solid rgb(234, 234, 234);
     width: 100%;
     padding: 5px 10px;
     display: block;
@@ -8,6 +8,7 @@
 }
 .auth-form input:focus{
     outline: none;
+    background: transparent;
 }
 .login{
     background: url('../assets/images/login_bg.jpg');

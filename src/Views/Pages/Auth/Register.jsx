@@ -1,10 +1,16 @@
 import React from 'react';
 import { BsFacebook, BsGithub, BsGoogle } from "react-icons/bs";
 import { useForm } from "react-hook-form";
+import useFirebase from '../../../hooks/useFirebase';
 
 const Register = ({loginState}) => {
+    const {emailSignUp} = useFirebase();
+
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    
+    const onSubmit = data => {
+        emailSignUp(data.email, data.password)
+    };
     
     
     return (
