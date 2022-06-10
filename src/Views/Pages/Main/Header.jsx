@@ -4,7 +4,7 @@ import '../../../css/header.css'
 import Drawer from '@mui/material/Drawer';
 import Dialog from '@mui/material/Dialog'
 import { FaSearch, FaUserAstronaut, FaShoppingBag } from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import Cart from '../../Components/Cart/Cart';
 import { useSelector } from 'react-redux';
@@ -16,7 +16,9 @@ const Header = () => {
     const [loginView, setLoginView] = useState(false)
 
     const itemCount = useSelector(state => state.cart.totalCartItem)
+    const user = useSelector(data => data.user.user)
 
+    // Toggle Buttons
     const handleOpenCart = () => {
         setCartState(!cartState)
     }
@@ -61,7 +63,13 @@ const Header = () => {
                 {/* Buttons  */}
                 <div className="col-span-2">
                     <div className="flex items-center">
-                        <button onClick={handleOpenLogin}><FaUserAstronaut style={{fontSize: '1.6em'}}/></button>
+                        
+                        {user.email
+                        ? <Link to='/profile'>{user.email}</Link>
+                        : <button onClick={handleOpenLogin}>
+                            <FaUserAstronaut style={{fontSize: '1.6em'}}/>
+                        </button>
+                        }
 
                         {/* Cart Button  */}
                         <button onClick={handleOpenCart} className='p-4 shadow-xl relative mx-2 bg-red-500 rounded-full'>
